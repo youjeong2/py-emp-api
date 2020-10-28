@@ -14,9 +14,9 @@ class ItemDto(db.Model):
     taste : str = db.Column(db.String(30))
     matching : str = db.Column(db.String(30))
     content : str = db. Column(db.String(30))
-
+    
     dairy = db.relationship('DiaryDto', lazy='dynamic')
-
+    
     def __init__(self, id, name, price, types, texture, taste, matching, content) : 
         self.id = id
         self.name = name
