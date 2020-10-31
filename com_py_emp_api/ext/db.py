@@ -2,7 +2,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-db = SQLAlchmy()
+db = SQLAlchemy()
 
 config = {
     'user' : 'root',
@@ -13,7 +13,7 @@ config = {
 }
 
 charset = {'utf8':'utf8'}
-url = f"mysql+mysqlconnector://{config['user']}:{congif['password']}@{config['host']}:{config['port']}/{config['database']}?charset=utf8"
+url = f"mysql+mysqlconnector://{config['youjeong2']}:{config['qkswl100']}@{config['host']}:{config['port']}/{config['database']}?charset=utf8"
 Base = declarative_base()
 engine = create_engine(url)
 
