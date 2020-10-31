@@ -1,6 +1,6 @@
-from com_py_emp_api.ext.db import db, openSession
-from com_py_emp_api.item.service import ItemService
-from com_py_emp_api.item.dto import ItemDto
+from com_emp_api.ext.db import db, openSession
+from com_emp_api.item.service import ItemService
+from com_emp_api.item.dto import ItemDto
 import pandas as pd
 import json
 
