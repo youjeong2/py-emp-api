@@ -10,7 +10,7 @@ from dataclasses import dataclass
 class FileReader:
     context: str = ''
     fname: str = ''
-    user: object = None
+    cheese_origin : object = None
     cheese: object = None
     train: object = None
     test: object = None

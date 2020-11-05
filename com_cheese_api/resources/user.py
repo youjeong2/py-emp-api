@@ -32,25 +32,25 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
-config = {
-    'user': 'bitai',
-    'password': '456123',
-    'host': '127.0.0.1',
-    'port': '3306',
-    'database': 'com_cheese_api'
-}
+# config = {
+#     'user': 'bitai',
+#     'password': '456123',
+#     'host': '127.0.0.1',
+#     'port': '3306',
+#     'database': 'com_cheese_api'
+# }
 
-charset = {'utf8':'utf8'}
+# charset = {'utf8':'utf8'}
 
-url = f"mysql+mysqlconnector://{config['user']}:{config['password']}@{config['host']}:{config['port']}/{config['database']}?charset=utf8"
+# url = f"mysql+mysqlconnector://{config['user']}:{config['password']}@{config['host']}:{config['port']}/{config['database']}?charset=utf8"
 
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = url
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+# app.config['SQLALCHEMY_DATABASE_URI'] = url
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# db = SQLAlchemy(app)
 
 
 class UserDf:
@@ -85,7 +85,8 @@ class UserDf:
         item_count = self.item_Count(this.user_origin, category_count)
         this.user = self.change_to_cheese(this.cheese, item_count)
         user_split = self.user_data_split(this.user)
-        # print(f'Preprocessing User Dataset : {this.user}')
+        print(f'Preprocessing User Dataset : {this.user}')
+
 
         # print(min(this.user['user_age'])) # 고객 최소 나이 : 10
         # print(max(this.user['user_age'])) # 고객 최대 나이 : 80
@@ -94,8 +95,8 @@ class UserDf:
         # 30대(1만5천) > 40대(1만4천) > 20대(3천5백) > 50대(3천1백) > 60대(523) > 10대=70대(80) >80대
         print(show_age_plot)
 
-        show_wordcloud = self.make_wordcloud(this.user)
-        print(show_wordcloud)
+        # show_wordcloud = self.make_wordcloud(this.user)
+        # print(show_wordcloud)
 
         return this
 
@@ -252,6 +253,9 @@ class UserDf:
         return user_train, user_test
 
 
+# if __name__ == '__main__':
+#     userDf = UserDf()
+#     userDf.user_hook
 
     #-------------------------------------------데이터 2차 정제-------------------------------------------#
     
@@ -620,9 +624,9 @@ class UserTf():
 class UserAi():
     ...
 
-db.init_app(app)
-with app.app_context():
-    db.create_all()
+# db.init_app(app)
+# with app.app_context():
+#     db.create_all()
 
 
     
